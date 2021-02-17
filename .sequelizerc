@@ -1,0 +1,13 @@
+/*  O Sequelize é um ORM (Object-Relational Mapper) para Node.js,
+que tem suporte aos bancos de dados PostgreSQL, MariaDB, MySQL, SQLite e MSSQL,
+como ORM ele faz o mapeamento de dados relacionais (tabelas, colunas e linhas)
+para objetos Javascript.*/
+
+const { resolve } = require('path'); // Caminho global
+
+module.exports = {
+  config: resolve(__dirname, 'src', 'config', 'database.js'), // __dirname seria a pasta local onde ta o arquivo .sequlize onde o arquivo database estar dentro de src/config
+  'models-path': resolve(__dirname, 'src', 'models'),
+  'migrations-path': resolve(__dirname, 'src', 'database', 'migrations'),
+  'seeders-path': resolve(__dirname, 'src', 'database', 'seeds')
+};
