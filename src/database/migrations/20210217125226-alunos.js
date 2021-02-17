@@ -1,4 +1,4 @@
-// Altureações da Base de Dados
+// Criação de tabelas no banco de dados
 
 module.exports = {
   up: (queryInterface, Sequelize) => queryInterface.createTable('alunos', {
