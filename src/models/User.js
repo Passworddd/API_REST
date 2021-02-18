@@ -46,8 +46,9 @@ export default class User extends Model {
     });
 
     this.addHook('beforeSave', async (user) => { // Antes de salvar o password veja de colocar um hash nele antes de salvar
-      // eslint-disable-next-line no-param-reassign
-      user.password_hash = await bcryptjs.hash(user.password, 8);
+      if (user.password) {
+        user.password_hash = await bcryptjs.hash(user.password, 8);
+      }
     });
 
     return this;
